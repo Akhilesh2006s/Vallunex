@@ -3,8 +3,8 @@
 This workspace contains:
 
 - Main landing app: `E:/Vallunex` (or `E:/Vallunex/VI` in the parallel copy)
-- VI/AFS app: `E:/Vallunex/Vallunex CC/AFS`
-- CC app: `E:/Vallunex/Vallunex CC/CC`
+- VI/AFS app: `E:/Vallunex/AFS`
+- CC app: `E:/Vallunex/CC`
 
 ## 1) Local development ports
 
@@ -20,12 +20,12 @@ npm run dev
 ```
 
 ```powershell
-cd "E:\Vallunex\Vallunex CC\AFS"
+cd E:\Vallunex\AFS
 npm run dev
 ```
 
 ```powershell
-cd "E:\Vallunex\Vallunex CC\CC"
+cd E:\Vallunex\CC
 npm run dev
 ```
 
@@ -44,7 +44,7 @@ Then rebuild/redeploy the landing app.
 
 When users choose AFS from CC, CC redirects to `VITE_VI_APP_URL`.
 
-Set this in `E:/Vallunex/Vallunex CC/CC/.env`:
+Set this in `E:/Vallunex/CC/.env`:
 
 ```env
 VITE_VI_APP_URL=https://vi.domain.com
