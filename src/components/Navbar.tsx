@@ -11,12 +11,16 @@ const navItems = [
   "CC",
 ];
 
+const currentOrigin = typeof window !== "undefined" ? window.location.origin : "";
+const defaultViUrl = import.meta.env.DEV ? "http://localhost:8081" : `${currentOrigin}/vi`;
+const defaultCcUrl = import.meta.env.DEV ? "http://localhost:8082" : `${currentOrigin}/cc`;
+
 const appLinks: Record<string, string> = {
   "Amenity Forge": "https://amenityforge.com",
   IAETDS: "https://iaetds.com",
   GTAP: "https://globaltimespanel.com",
-  VI: import.meta.env.VITE_VI_APP_URL || "http://localhost:8081",
-  CC: import.meta.env.VITE_CC_APP_URL || "http://localhost:8082",
+  VI: import.meta.env.VITE_VI_APP_URL || defaultViUrl,
+  CC: import.meta.env.VITE_CC_APP_URL || defaultCcUrl,
 };
 
 const Navbar = () => {
