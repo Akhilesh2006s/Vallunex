@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 50% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 4%;
+
+    --primary: 210 40% 15%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 10% 94%;
+    --secondary-foreground: 210 40% 15%;
+
+    --muted: 210 10% 90%;
+    --muted-foreground: 210 10% 40%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 10% 88%;
+    --input: 210 10% 88%;
+    --ring: 210 40% 15%;
+
+    --radius: 0.25rem;
+
+    --shadow-paper: 0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+    --shadow-contain: 0 0 0 1px rgba(0,0,0,0.05);
+
+    --font-display: "Instrument Serif", serif;
+    --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-hero {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .shadow-paper {
+    box-shadow: var(--shadow-paper);
+  }
+
+  .shadow-contain {
+    box-shadow: var(--shadow-contain);
+  }
+
+  .scrim-bottom {
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  }
+}
