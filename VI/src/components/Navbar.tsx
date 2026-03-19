@@ -11,9 +11,27 @@ const navItems = [
   "CC",
 ];
 
-const currentOrigin = typeof window !== "undefined" ? window.location.origin : "";
-const defaultViUrl = import.meta.env.DEV ? "http://localhost:8081" : `${currentOrigin}/vi`;
-const defaultCcUrl = import.meta.env.DEV ? "http://localhost:8082" : `${currentOrigin}/cc`;
+const getDefaultAppUrl = (subdomain: "vi" | "cc", localPort: number) => {
+  if (import.meta.env.DEV) {
+    return `http://localhost:${localPort}`;
+  }
+
+  if (typeof window === "undefined") {
+    return "";
+  }
+
+  const protocol = window.location.protocol;
+  const hostParts = window.location.hostname.split(".");
+  if (hostParts.length >= 2) {
+    const rootDomain = hostParts.slice(-2).join(".");
+    return `${protocol}//${subdomain}.${rootDomain}`;
+  }
+
+  return window.location.origin;
+};
+
+const defaultViUrl = getDefaultAppUrl("vi", 8081);
+const defaultCcUrl = getDefaultAppUrl("cc", 8082);
 
 const appLinks: Record<string, string> = {
   "Amenity Forge": "https://amenityforge.com",
