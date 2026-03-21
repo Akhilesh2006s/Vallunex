@@ -23,7 +23,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const StatsStrip = () => {
   return (
-    <section className="py-20 px-8 md:px-16 border-t border-b border-border bg-emerald-950 text-emerald-50">
+    <section className="py-20 px-8 md:px-16 bg-navy text-white">
       <div className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-20">
         {stats.map((stat, i) => (
           <motion.div
@@ -34,10 +34,10 @@ const StatsStrip = () => {
             transition={{ duration: 0.6, ease, delay: i * 0.1 }}
             className={i === 1 ? "text-center" : undefined}
           >
-            <span className="font-display text-4xl md:text-5xl tabular-nums">
+            <span className="font-display text-4xl md:text-5xl tabular-nums text-gold">
               {stat.value}
             </span>
-            <p className="mt-2 text-sm text-emerald-100/80">{stat.label}</p>
+            <p className="mt-2 text-sm text-white/60">{stat.label}</p>
           </motion.div>
         ))}
       </div>

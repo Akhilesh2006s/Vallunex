@@ -6,6 +6,14 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-end pb-32 pt-16 px-8 md:px-16 overflow-hidden">
       <div className="max-w-[1440px] mx-auto w-full">
+        <motion.img
+          src="/vallunex-logo.png"
+          alt="Vallunex Group"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease }}
+          className="h-20 md:h-24 w-auto object-contain mb-8"
+        />
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

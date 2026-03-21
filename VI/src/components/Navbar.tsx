@@ -51,9 +51,13 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-8 md:px-16 backdrop-blur-md bg-background/80 shadow-contain"
     >
-      <span className="font-display text-xl tracking-tight text-foreground">
-        Vallunex Global
-      </span>
+      <a href="/" className="flex items-center gap-3">
+        <img
+          src="/vallunex-logo.png"
+          alt="Vallunex Group"
+          className="h-10 w-auto object-contain"
+        />
+      </a>
       <div className="hidden md:flex items-center gap-10">
         {navItems.map((item, i) => {
           const url = appLinks[item] ?? `#${item.toLowerCase().replace(/ /g, "-")}`;
