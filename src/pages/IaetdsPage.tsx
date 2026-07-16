@@ -29,7 +29,7 @@ const IaetdsPage = () => {
       <Navbar />
       <main>
         <InitiativeHero
-          eyebrow="Valedue"
+          eyebrow="Vallunex Global"
           logo="/iaetds-logo.png"
           name="IAETDS"
           full="Indian Association for Educational Technology & Digital Systems"

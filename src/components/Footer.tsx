@@ -1,9 +1,13 @@
+/**
+ * The homepage speaks only in the group's voice. The enterprises are listed
+ * here, in the footer, so their pages stay reachable — Valedue is omitted
+ * because it has neither a page nor a section to point at.
+ */
 const columns = [
   {
-    heading: "The Houses",
+    heading: "Enterprises",
     links: [
       { label: "Amenity Forge", href: "https://amenityforge.com" },
-      { label: "Valedue", href: "/#valedue" },
       { label: "Vallunex Studios", href: "/vallunex-studios" },
       { label: "Adorable Aroma", href: "/adorable-aroma" },
     ],

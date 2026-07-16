@@ -29,10 +29,10 @@ const VallunexStudiosPage = () => {
         <section className="border-b border-rule px-gutter pb-20 pt-32 md:pb-24 md:pt-40">
           <div className="mx-auto max-w-4xl text-center">
             <a
-              href="/#sectors"
+              href="/"
               className="type-label text-brass transition-colors hover:text-estate"
             >
-              The Houses
+              Vallunex Global
             </a>
 
             <h1 className="type-display mt-10 text-[clamp(2.6rem,8vw,6.5rem)]">

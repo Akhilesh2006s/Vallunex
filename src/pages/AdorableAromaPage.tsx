@@ -10,8 +10,8 @@ const AdorableAromaPage = () => {
       <Navbar />
       <main>
         <InitiativeHero
-          eyebrow="The Houses"
-          eyebrowHref="/#sectors"
+          eyebrow="Vallunex Global"
+          eyebrowHref="/"
           logo={adorableAroma}
           name="Adorable Aroma"
           full="Fragrance & Wellness"

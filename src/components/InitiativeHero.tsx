@@ -15,7 +15,7 @@ interface InitiativeHeroProps {
 
 const InitiativeHero = ({
   eyebrow,
-  eyebrowHref = "/#valedue",
+  eyebrowHref = "/",
   logo,
   name,
   full,

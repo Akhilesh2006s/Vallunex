@@ -29,7 +29,7 @@ const GtapPage = () => {
       <Navbar />
       <main>
         <InitiativeHero
-          eyebrow="Valedue"
+          eyebrow="Vallunex Global"
           logo="/gtap-logo.png"
           name="GTAP"
           full="Global T.I.M.E.S Accreditation Panel"

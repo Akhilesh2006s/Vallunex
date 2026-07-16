@@ -28,11 +28,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* Valedue is no longer a standalone page — it lives as a section on the homepage. */}
-            <Route
-              path="/valedue"
-              element={<Navigate to={{ pathname: "/", hash: "#valedue" }} replace />}
-            />
+            {/* Valedue has no page or homepage section of its own — send old
+                links to the homepage rather than 404. */}
+            <Route path="/valedue" element={<Navigate to="/" replace />} />
             <Route path="/gtap" element={<GtapPage />} />
             <Route path="/iaetds" element={<IaetdsPage />} />
             <Route path="/vallunex-studios" element={<VallunexStudiosPage />} />
