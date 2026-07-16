@@ -1,20 +1,18 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import StatsStrip from "@/components/StatsStrip";
 import SectorsSection from "@/components/SectorsSection";
+import ValedueAxisSection from "@/components/ValedueAxisSection";
 import GlobalImpactSection from "@/components/GlobalImpactSection";
-import InvestorEntitiesSection from "@/components/InvestorEntitiesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-ivory">
       <Navbar />
       <HeroSection />
-      <StatsStrip />
       <SectorsSection />
+      <ValedueAxisSection />
       <GlobalImpactSection />
-      <InvestorEntitiesSection />
       <Footer />
     </div>
   );

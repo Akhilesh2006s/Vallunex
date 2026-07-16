@@ -18,6 +18,23 @@ export default {
         sans: ['var(--font-sans)'],
       },
       colors: {
+        ivory: {
+          DEFAULT: "hsl(var(--ivory))",
+          deep: "hsl(var(--ivory-deep))",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          soft: "hsl(var(--ink-soft))",
+        },
+        estate: {
+          DEFAULT: "hsl(var(--estate))",
+          light: "hsl(var(--estate-light))",
+        },
+        brass: {
+          DEFAULT: "hsl(var(--brass))",
+          light: "hsl(var(--brass-light))",
+        },
+        rule: "hsl(var(--rule))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

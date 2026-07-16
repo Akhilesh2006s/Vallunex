@@ -1,6 +1,12 @@
 import { FormEvent, useState } from "react";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import heroBg from "@/assets/hero-bg.jpg";
+import Footer from "@/components/Footer";
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const field =
+  "mt-3 w-full border-0 border-b border-rule bg-transparent pb-2.5 text-lg text-ink outline-none transition-colors placeholder:text-ink-soft/40 focus:border-estate";
 
 const TalkToUsPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,130 +43,144 @@ const TalkToUsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-ivory">
       <Navbar />
-      <main className="pt-20 px-4 md:px-10 pb-10">
-        <div
-          className="max-w-6xl mx-auto rounded-2xl border border-border/60 overflow-hidden min-h-[78vh] relative"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+      <main className="px-gutter pb-24 pt-32 md:pt-40">
+        <div className="mx-auto max-w-3xl text-center">
+          <a
+            href="/"
+            className="type-label text-brass transition-colors hover:text-estate"
+          >
+            Vallunex Global
+          </a>
+
+          <h1 className="type-display mt-10 text-[clamp(2.6rem,7vw,5.5rem)]">
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: "105%" }}
+                animate={{ y: "0%" }}
+                transition={{ duration: 1.1, ease, delay: 0.1 }}
+                className="block"
+              >
+                Bring us the
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: "105%" }}
+                animate={{ y: "0%" }}
+                transition={{ duration: 1.1, ease, delay: 0.2 }}
+                className="block italic text-estate"
+              >
+                difficult one.
+              </motion.span>
+            </span>
+          </h1>
+
+          <div className="mx-auto mt-10 h-px w-14 bg-brass" />
+
+          <p className="mx-auto mt-10 max-w-lg text-base leading-relaxed text-ink-soft">
+            Tell us which part of the group you need. Share your details and our
+            team will get back to you shortly.
+          </p>
+        </div>
+
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease, delay: 0.4 }}
+          className="mx-auto mt-20 max-w-3xl"
         >
-          <div className="absolute inset-0 bg-white/70" />
-          <div className="relative p-5 md:p-8">
-            <div className="max-w-3xl mx-auto bg-[#fffdf7] rounded-2xl border border-border/60 shadow-paper">
-              <div className="px-6 md:px-8 py-5 border-b border-border/70">
-                <h1 className="font-display text-4xl text-navy">Talk To Us</h1>
-                <p className="mt-2 text-sm text-navy/60">
-                  Share your details and our team will get back to you shortly.
-                </p>
-              </div>
+          <input type="hidden" name="_subject" value="New Vallunex Talk To Us Submission" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
 
-              <form onSubmit={handleSubmit} className="px-6 md:px-8 py-6 space-y-5">
-                <input type="hidden" name="_subject" value="New Vallunex Talk To Us Submission" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="text-xs font-semibold tracking-wider uppercase text-navy/70">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      required
-                      className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-navy outline-none focus:ring-2 focus:ring-gold/40"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="text-xs font-semibold tracking-wider uppercase text-navy/70">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-navy outline-none focus:ring-2 focus:ring-gold/40"
-                      placeholder="example@gmail.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="text-xs font-semibold tracking-wider uppercase text-navy/70">
-                    Your Company Name
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-navy outline-none focus:ring-2 focus:ring-gold/40"
-                    placeholder="Company Inc."
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="description" className="text-xs font-semibold tracking-wider uppercase text-navy/70">
-                    Description
-                  </label>
-                  <textarea
-                    id="description"
-                    name="description"
-                    rows={4}
-                    className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-navy outline-none focus:ring-2 focus:ring-gold/40"
-                    placeholder="Tell us what you want to automate with Vallunex."
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="text-xs font-semibold tracking-wider uppercase text-navy/70">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-navy outline-none focus:ring-2 focus:ring-gold/40"
-                    placeholder="Any additional details for the team."
-                  />
-                </div>
-
-                {status === "success" && (
-                  <p className="rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-700 text-sm">
-                    Success! Your request has been submitted. Our team will contact you soon.
-                  </p>
-                )}
-
-                {status === "error" && (
-                  <p className="rounded-lg bg-rose-50 border border-rose-200 px-4 py-3 text-rose-700 text-sm">
-                    Something went wrong while submitting. Please try again.
-                  </p>
-                )}
-
-                <div className="flex items-center justify-end gap-3 pt-2">
-                  <a
-                    href="/"
-                    className="px-5 py-2.5 text-sm font-medium text-navy/70 hover:text-navy"
-                  >
-                    Cancel
-                  </a>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-navy text-white rounded-full px-7 py-2.5 text-sm font-semibold hover:bg-navy-light transition-colors disabled:opacity-70"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Request"}
-                  </button>
-                </div>
-              </form>
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <label htmlFor="name" className="type-label text-ink-soft">
+                Name *
+              </label>
+              <input id="name" name="name" required className={field} placeholder="Name" />
+            </div>
+            <div>
+              <label htmlFor="email" className="type-label text-ink-soft">
+                Email *
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className={field}
+                placeholder="example@gmail.com"
+              />
             </div>
           </div>
-        </div>
+
+          <div className="mt-10">
+            <label htmlFor="company" className="type-label text-ink-soft">
+              Company
+            </label>
+            <input id="company" name="company" className={field} placeholder="Company Inc." />
+          </div>
+
+          <div className="mt-10">
+            <label htmlFor="description" className="type-label text-ink-soft">
+              What can we help with?
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              rows={3}
+              className={`${field} resize-none`}
+              placeholder="Which part of the Vallunex group you're interested in."
+            />
+          </div>
+
+          <div className="mt-10">
+            <label htmlFor="message" className="type-label text-ink-soft">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className={`${field} resize-none`}
+              placeholder="Any additional details for the team."
+            />
+          </div>
+
+          {status === "success" && (
+            <p
+              role="status"
+              className="mt-10 border-l-2 border-estate bg-ivory-deep px-5 py-4 text-sm"
+            >
+              Your request has been submitted. Our team will contact you soon.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p
+              role="alert"
+              className="mt-10 border-l-2 border-destructive bg-ivory-deep px-5 py-4 text-sm text-destructive"
+            >
+              Something went wrong while submitting. Please try again.
+            </p>
+          )}
+
+          <div className="mt-14 text-center">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="type-label border border-estate bg-estate px-10 py-4 text-ivory transition-colors duration-500 hover:bg-transparent hover:text-estate disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending…" : "Send Request"}
+            </button>
+          </div>
+        </motion.form>
       </main>
+      <Footer />
     </div>
   );
 };

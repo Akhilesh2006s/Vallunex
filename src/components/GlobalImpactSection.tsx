@@ -3,69 +3,105 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+const disciplines = [
+  {
+    n: "I",
+    title: "Understand the domain",
+    body: "Software, accreditation, film and fragrance share no vocabulary. We learn each one on its own terms before we build.",
+  },
+  {
+    n: "II",
+    title: "Build the platform",
+    body: "We favour durable platforms over one-off solutions — systems the next problem can also stand on.",
+  },
+  {
+    n: "III",
+    title: "Hold the standard",
+    body: "The same bar applies whether the work is an AI system, an institutional framework, or a film.",
+  },
+];
+
 const GlobalImpactSection = () => {
   return (
-    <section
-      id="global-impact"
-      className="py-32 px-8 md:px-16 bg-slate-50"
-    >
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <section id="global-impact" className="scroll-mt-16 bg-estate text-ivory">
+      {/* Statement */}
+      <div className="px-gutter py-24 md:py-32">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease }}
+          className="mx-auto max-w-4xl text-center"
         >
-          <p className="text-sm text-gold-dark uppercase tracking-widest mb-4 font-semibold">
-            Global Impact
+          <p className="type-label text-brass-light">The Discipline</p>
+          <p className="type-display mt-8 text-[clamp(1.9rem,4.6vw,3.6rem)]">
+            Different industries ask different questions. The discipline of
+            solving them <span className="italic text-brass-light">does not change.</span>
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-navy">
-            Building ecosystems that shape industries
-          </h2>
-          <p className="mt-6 text-navy/60 text-lg leading-relaxed">
-            From advanced technology platforms and AI-driven infrastructure to global education networks, media production, and cinematic storytelling, Vallunex Global operates at the convergence of
-            innovation, knowledge, and culture. Through its diversified ecosystem spanning technology, education, media, and entertainment, Vallunex is building platforms that influence how the
-            world learns, connects, and experiences the future.
-          </p>
-          <div className="mt-10 grid grid-cols-2 gap-8">
-            <div>
-              <span className="font-display text-3xl text-gold-dark tabular-nums">
-                5+
+        </motion.div>
+
+        <div className="mx-auto mt-24 grid max-w-5xl gap-14 md:grid-cols-3 md:gap-10">
+          {disciplines.map((d, i) => (
+            <motion.article
+              key={d.n}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease, delay: i * 0.12 }}
+              className="border-t border-ivory/20 pt-7"
+            >
+              <span aria-hidden="true" className="type-numeral text-sm text-brass-light">
+                {d.n}
               </span>
-              <p className="text-sm text-navy/50 mt-1">
-                Industries: Technology, Education, Media, Entertainment &amp; Innovation
+              <h3 className="type-title mt-3 text-2xl">{d.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-ivory/60">
+                {d.body}
               </p>
-            </div>
-            <div>
-              <span className="font-display text-3xl text-gold-dark tabular-nums">
-                Global
-              </span>
-              <p className="text-sm text-navy/50 mt-1">
-                Ecosystem of platforms, studios, and digital infrastructure
-              </p>
-            </div>
-          </div>
-          <a
-            href="/talk-to-us"
-            className="inline-block mt-10 bg-navy text-white px-8 py-3.5 text-sm font-medium hover:bg-navy-light transition-colors duration-300"
+            </motion.article>
+          ))}
+        </div>
+      </div>
+
+      {/* Plate + invitation */}
+      <div className="border-t border-ivory/15 px-gutter py-20 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+          <motion.figure
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, ease }}
+            className="aspect-[4/3] overflow-hidden"
           >
-            Talk To Us
-          </a>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease, delay: 0.2 }}
-          className="aspect-[4/3] overflow-hidden rounded-sm shadow-paper"
-        >
-          <img
-            src={heroBg}
-            alt="Vallunex Global headquarters"
-            className="object-cover w-full h-full"
-            loading="lazy"
-          />
-        </motion.div>
+            <img
+              src={heroBg}
+              alt=""
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </motion.figure>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease, delay: 0.1 }}
+          >
+            <h2 className="type-display text-[clamp(1.9rem,4vw,3rem)]">
+              Bring us the difficult one.
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/60">
+              If the problem sits across domains — technology and institutions,
+              story and system — that is precisely where the group is built to
+              work.
+            </p>
+            <a
+              href="/talk-to-us"
+              className="type-label mt-10 inline-block border border-brass bg-brass px-8 py-4 text-ink transition-colors duration-500 hover:bg-transparent hover:text-brass"
+            >
+              Enquire
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
