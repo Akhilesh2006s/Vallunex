@@ -9,12 +9,6 @@ const Footer = () => {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-14 pb-16 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-7">
-            <img
-              src="/vallunex-logo.png"
-              alt="Vallunex Global"
-              className="h-11 w-auto object-contain"
-              onError={(e) => e.currentTarget.remove()}
-            />
             <p className="type-display mt-7 max-w-md text-3xl md:text-4xl">
               One conglomerate.
               <span className="block italic text-estate">Every domain.</span>
